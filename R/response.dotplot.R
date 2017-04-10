@@ -6,8 +6,7 @@
 #' @param format what format do you want your graph images? Possible values "pdf", "png","tiff","jpeg"
 #' @param subfolder What do you want the subfolder to be called. This will contain all figures and tables generated in this study
 #' @return Creates Abbot's correction Plots and Tables for Toxicology
-
-
+#' @export
 response.dotplot <- function(adjusted.data,control,write=T,format="pdf",subfolder="Individual_Vial_Dotplots"){
       dir.create(subfolder)
       setwd(paste("./",subfolder,sep=""))

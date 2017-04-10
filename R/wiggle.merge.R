@@ -4,10 +4,7 @@
 #' @param output.name A string of the desired name of the output file
 #' @param write If TRUE the results will be written to a .csv file. Defaults to FALSE
 #' @return Merges wiggle index outputs from individual wells into one file
-
-
-
-
+#' @export
 wiggle.merge <- function(wd=".",output.name="merged.wiggle.data.csv",write=T){
       setwd(wd)
       merged.data <- data.frame()

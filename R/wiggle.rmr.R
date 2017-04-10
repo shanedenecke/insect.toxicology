@@ -4,8 +4,7 @@
 #' @param output.name A string of the desired name of the output file
 #' @param write If TRUE the results will be written to a .csv file. Defaults to FALSE
 #' @return Corrects wiggle data by adding RMR value. See Denecke et. al 2017
-
-
+#' @export
 wiggle.rmr <- function(data,file.name="rmr.wiggle.data.csv",write=T){
       library(tidyr)
       library(dplyr)

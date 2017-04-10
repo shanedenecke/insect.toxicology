@@ -5,8 +5,7 @@
 #' @param new.key Do you want to specify your own insecticide solvent key? Defaults to FALSE
 #' @param solvent.override You can manually set all of the solvents to "water" "dmso" or "ethanol" if you please. Defaults to NA
 #' @return returns data frame which has added the 0 dose for all of your insecticides
-
-
+#' @export
 dmc.control.add <- function(raw.data,key=NULL,new.key=F,solvent.overide=NA){
       
       ## Determine if a new key is to be accepted

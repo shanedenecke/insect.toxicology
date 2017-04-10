@@ -4,7 +4,7 @@
 #' @param output.name A string of the desired name of the output file
 #' @param write If TRUE the results will be written to a .csv file. Defaults to FALSE
 #' @return Parses wiggle index outputs into cleaner more readable data frame
-
+#' @export
 wiggle.parse <- function(data,ouptut.name="parsed.wiggle.data.csv",write=T){
       split.frame <- matrix(unlist(strsplit(as.character(data$Image.Name),"\\).")),ncol=8,byrow=T)[,c(1:6,8)]
       split.frame <- gsub("\\(","",split.frame)
