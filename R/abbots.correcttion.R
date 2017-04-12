@@ -7,8 +7,9 @@
 #' @return Creates Abbot's correction Plots and Tables for Toxicology
 #' @export
 abbots.correction <- function(adjusted.data,control,write=T,format="pdf",subfolder="Abbots_Correction"){
-
+      if(!dir.exists(subfolder)){
       dir.create(file.path(getwd(),subfolder))
+      }
       setwd(file.path(getwd(),subfolder))
       index <- adjusted.data %>% select(genotype,dose,pesticide) %>% unique() %>% data.frame()
       reduced.index <- index %>% select(genotype,pesticide) %>% unique()
@@ -70,4 +71,5 @@ abbots.correction <- function(adjusted.data,control,write=T,format="pdf",subfold
                   dev.off()
             }
       }
+      setwd("..")
 }

@@ -2,9 +2,7 @@
 % Please edit documentation in R/LD.R
 \name{LD}
 \alias{LD}
-\title{Generates Lc50 values
-I didn't write this function it is from Robinson et. al 2013 http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0054092
-Go read it. This guy/girl (idk what kind of name Reed is) did some fine work}
+\title{Generates Lc50 values}
 \usage{
 LD(dead, total, dose, conf.level, ld.level = 50)
 }
@@ -15,15 +13,13 @@ LD(dead, total, dose, conf.level, ld.level = 50)
 
 \item{dose}{doses used in your assay}
 
-\item{conf.level}{What do you want your confidence intervals to be % wise? defaults to .95}
+\item{conf.level}{What do you want your confidence intervals to be percent wise? defaults to .95}
 
 \item{ld.level}{What LD level do you want to predict? defaults to 50 to calculate Ld50}
 }
 \value{
-Calculates LD values for genotype:insecticide combination
+Calculates LD values for genotype:insecticide combination. I didn't write this function it is from Robinson et. al 2013 http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0054092
 }
 \description{
 Generates Lc50 values
-I didn't write this function it is from Robinson et. al 2013 http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0054092
-Go read it. This guy/girl (idk what kind of name Reed is) did some fine work
 }
