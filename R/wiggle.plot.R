@@ -1,8 +1,12 @@
-a <- example.wiggle.data %>% wiggle.parse() %>% wiggle.rmr()
-control="HRG4xUAS-NULL"
-other.genotypes="all"
-
-
+#' Wiggle Plot
+#'
+#' @param rmr.data A data frame containing wiggle index RMR values. Usually output of wiggle.rmr funciton
+#' @param control A string of your control genotype. e.g "Line14"
+#' @param write If TRUE graphs will be produced in the specified format and .csv tables will be generated. If FALSE ouput will be localized to R. Defaults to TRUE
+#' @param format what format do you want your graph images? Possible values "pdf", "png","tiff","jpeg"
+#' @param font Which font do you want your graph text to be in
+#' @return Creates standard Wiggle Index plots
+#' @export
 wiggle.plot <- function(rmr.data,control,other.genotypes="all",colours=c("grey50","red","blue","gold4","purple","orange"),write=T,format="pdf",font="serif"){
       if(other.genotypes=="all"){
             other.genotypes <- as.character(unique(rmr.data$genotype))[which(unique(rmr.data$genotype)!=control)]
