@@ -11,4 +11,5 @@ RoxygenNote: 5.0.1.9000
 Depends:
 	data.table,
 	dplyr,
-	ggplot2
+	ggplot2,
+	tidyr
