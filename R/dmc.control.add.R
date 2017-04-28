@@ -16,7 +16,7 @@ dmc.control.add <- function(raw.data,key=NULL,new.key=F,solvent.overide=NA){
                         c(insecticide="spinosad",solvent="h20"),
                         c(insecticide="nicotine",solvent="h20"),
                         c(insecticide="malathion",solvent="h20"),
-                        c(insecticide="imi-5oh",solvent="dmso"),
+                        c(insecticide="imi-5-oh",solvent="dmso"),
                         c(insecticide="imi-olefin",solvent="dmso"),
                         c(insecticide="clothianidin",solvent="dmso"),
                         c(insecticide="acetamiprid",solvent="dmso"),
@@ -24,6 +24,7 @@ dmc.control.add <- function(raw.data,key=NULL,new.key=F,solvent.overide=NA){
                         c(insecticide="sulfoxaflor",solvent="dmso"),
                         c(insecticide="permethrin",solvent="dmso"),
                         c(insecticide="pyripole",solvent="ethanol"),
+                        c(insecticide="nitenpyram",solvent="h20"),
                         c(insecticide="chlorantraniliprole",solvent="h20"),
                         c(insecticide="ivermectin",solvent="dmso"),
                         c(insecticide="abamectin",solvent="dmso"),
@@ -59,7 +60,6 @@ dmc.control.add <- function(raw.data,key=NULL,new.key=F,solvent.overide=NA){
             clean.data.list[[paste(p,sep="_")]] <- rbind(sub.data,control.data)
             if (p==control.chemical) clean.data.list[[paste(p,sep="_")]] <- sub.data
       }
-      
       
       return(rbindlist(clean.data.list,use.names=T))           
 }

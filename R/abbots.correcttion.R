@@ -6,7 +6,7 @@
 #' @param format what format do you want your graph images? Possible values "pdf", "png","tiff","jpeg"
 #' @return Creates Abbot's correction Plots and Tables for Toxicology
 #' @export
-abbots.correction <- function(adjusted.data,control,write=T,format="pdf",subfolder="Abbots_Correction"){
+abbots.correction <- function(adjusted.data,control,write=T,format="pdf",subfolder="Abbots_Correction",interval=95){
       if(!dir.exists(subfolder)){
       dir.create(file.path(getwd(),subfolder))
       }
@@ -30,7 +30,7 @@ abbots.correction <- function(adjusted.data,control,write=T,format="pdf",subfold
             ex.count <- n[dose==index[i,'dose']]
             ex.var <- var_mortality[dose==index[i,'dose']]
             dof <- min(ex.count,control.count) - 1 #degrees of freedom
-            t.value <- qt(.05, dof)
+            t.value <- qt(1-interval, dof)
             g <- (control.var * (t.value^2))/(((1-control.mean)^2) * control.count)
             p.corr.mort <- 1 - ((1-ex.mean)/((1-control.mean)/(1-g)))
             c.i <- ((((1-g) * (ex.var/ex.count)) + ((((1-ex.mean)^2) * control.var) / (((1-control.mean)^2) * control.count)))^0.5) * (t.value/((1-control.mean) / (1-g)))
@@ -54,7 +54,7 @@ abbots.correction <- function(adjusted.data,control,write=T,format="pdf",subfold
             }
             gp <- ggplot(data=plot.data,aes(x=dose,y=corrected.survival,group=interaction(dose,genotype)))
             gp <- gp+geom_bar(aes(fill=genotype),position=position_dodge(width=.5),stat="identity",colour="black",width=.5)
-            gp <- gp+geom_errorbar(aes(ymin=corrected.survival,ymax=corrected.survival-conf.int),position=position_dodge(width=.5),stat="identity",width=.5)
+            gp <- gp+geom_errorbar(aes(ymin=corrected.survival+conf.int,ymax=corrected.survival-conf.int),position=position_dodge(width=.5),stat="identity",width=.5)
 
             gp <- gp+ggtitle(paste("Abbots Correction",p,sep=" "))
             gp <- gp+scale_y_continuous(breaks=seq(0,1,by=.1))

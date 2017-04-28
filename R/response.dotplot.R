@@ -10,7 +10,6 @@
 response.dotplot <- function(adjusted.data,control,write=T,format="pdf",subfolder="Individual_Vial_Dotplots"){
       dir.create(subfolder)
       setwd(paste("./",subfolder,sep=""))
-      
       ungen <-  unique(adjusted.data$genotype)
       colnames(adjusted.data) <- tolower(colnames(adjusted.data))
       adjusted.data$genotype <- tolower(adjusted.data$genotype)
@@ -50,4 +49,5 @@ response.dotplot <- function(adjusted.data,control,write=T,format="pdf",subfolde
                   dev.off()
             }
       }
+      setwd("..")
 }
