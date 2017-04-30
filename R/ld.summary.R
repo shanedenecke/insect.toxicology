@@ -25,3 +25,4 @@ ld.summary <- function(adjusted.data,conf.level=.95,ld.level=50){
       output <- cbind(index,rbindlist(l,use.names=T))
       return(output)
 }
+

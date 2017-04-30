@@ -83,7 +83,7 @@ LD <- function(dead, total, dose, conf.level,ld.level=50) {
             "g"=g,
             "theta.hat"=theta.hat,
             "var.theta.hat"=var.theta.hat)
-      ECtable <- select(ECtable,N,EC,LCL,UCL)
+      ECtable <- select(ECtable,N,EC,LCL,UCL,var.theta.hat,theta.hat)
       ## Select output level
       return(ECtable[ld.level,])
 }

@@ -6,7 +6,7 @@
 #' @param format what format do you want your graph images? Possible values "pdf", "png","tiff","jpeg"
 #' @return Creates Abbot's correction Plots and Tables for Toxicology
 #' @export
-abbots.correction <- function(adjusted.data,control,write=T,format="pdf",subfolder="Abbots_Correction",interval=95){
+abbots.correction <- function(adjusted.data,control,write=T,format="pdf",subfolder="Abbots_Correction",interval=.95){
       if(!dir.exists(subfolder)){
       dir.create(file.path(getwd(),subfolder))
       }
