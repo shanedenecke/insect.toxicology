@@ -7,9 +7,9 @@ to install this package please copy and paste the following commands into your R
 
 
 - install.packages("devtools")
+- library(devtools)
 
 - devtools::install_github("shanedenecke/insect.toxicology")
-
 - library(insect.toxicology)
 
 
