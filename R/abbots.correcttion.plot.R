@@ -11,7 +11,7 @@ abbots.correction.plot <- function(adjusted.data,control,write=T,format="pdf",su
       dir.create(file.path(getwd(),subfolder))
       }
       setwd(file.path(getwd(),subfolder))
-      colnames(adjusted.data) <- tolower(colnames(adusted.data))
+      colnames(adjusted.data) <- tolower(colnames(adjusted.data))
       index <- adjusted.data %>% select(genotype,dose,pesticide) %>% unique() %>% data.frame()
       reduced.index <- index %>% select(genotype,pesticide) %>% unique()
       emlist <- list()

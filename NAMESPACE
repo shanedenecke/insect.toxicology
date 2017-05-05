@@ -2,6 +2,8 @@
 
 export(LD)
 export(abbots.correction)
+export(abbots.correction.plot)
+export(abbots.correction.table)
 export(dmc.control.add)
 export(dose.determine)
 export(ld.summary)
