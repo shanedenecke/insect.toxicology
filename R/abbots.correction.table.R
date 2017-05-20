@@ -43,8 +43,6 @@ abbots.correction.table <- function(adjusted.data,control,write=T,subfolder="Abb
       
       summary.data <- cbind(index,rbindlist(emlist)) %>%
             mutate(corrected.survival=1-corrected.mortality) %>%
-            mutate(genotype=factor(genotype,factor(genotype,levels=tolower(c(control,
-            unique(as.character(genotype)[which(unique(as.character(genotype))!=control)])))))) %>%
             mutate(dose=as.factor(dose)) %>%
             mutate(ucl=corrected.survival-conf.int) %>%
             mutate(lcl=corrected.survival+conf.int) %>%
