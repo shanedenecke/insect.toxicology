@@ -12,10 +12,10 @@ dmc.control.add <- function(raw.data,key=NULL,new.key=F,solvent.overide=NA){
       if(new.key==T){
             insecticide.key <- key
       }else{
-            key <- list(c(insecticide="imidacloprid",solvent="h20"),
-                        c(insecticide="spinosad",solvent="h20"),
-                        c(insecticide="nicotine",solvent="h20"),
-                        c(insecticide="malathion",solvent="h20"),
+            key <- list(c(insecticide="imidacloprid",solvent="h2o"),
+                        c(insecticide="spinosad",solvent="h2o"),
+                        c(insecticide="nicotine",solvent="h2o"),
+                        c(insecticide="malathion",solvent="h2o"),
                         c(insecticide="imi-5-oh",solvent="dmso"),
                         c(insecticide="imi-olefin",solvent="dmso"),
                         c(insecticide="clothianidin",solvent="dmso"),
@@ -24,14 +24,14 @@ dmc.control.add <- function(raw.data,key=NULL,new.key=F,solvent.overide=NA){
                         c(insecticide="sulfoxaflor",solvent="dmso"),
                         c(insecticide="permethrin",solvent="dmso"),
                         c(insecticide="pyripole",solvent="ethanol"),
-                        c(insecticide="nitenpyram",solvent="h20"),
-                        c(insecticide="chlorantraniliprole",solvent="h20"),
+                        c(insecticide="nitenpyram",solvent="h2o"),
+                        c(insecticide="chlorantraniliprole",solvent="h2o"),
                         c(insecticide="ivermectin",solvent="dmso"),
                         c(insecticide="abamectin",solvent="dmso"),
                         c(insecticide="mix",solvent="dmso"),
                         c(insecticide="ethanol",solvent="ethanol"),
                         c(insecticide="dmso",solvent="dmso"),
-                        c(insecticide="h20",solvent="h20"))
+                        c(insecticide="h2o",solvent="h2o"))
       }
       names(key) <- sapply(key,function(x) x[1])
       
